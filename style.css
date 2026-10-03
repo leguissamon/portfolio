@@ -1,0 +1,135 @@
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --main-bg: hsl(217, 54%, 11%);
+  --card-bg: hsl(216, 50%, 16%);
+  --line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 15px;
+  padding: 1.5rem;
+  max-width: 350px;
+  box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.5);
+}
+
+.card__image-wrapper {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.card__image-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card__image-wrapper:hover .card__image-overlay {
+  opacity: 1;
+}
+
+.card__icon-view {
+  width: 25%;
+}
+
+.card__title {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin: 1.2rem 0 0.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.card__title:hover {
+  color: var(--cyan);
+}
+
+.card__description {
+  color: var(--soft-blue);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.card__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card__price,
+.card__time {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card__price span {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.card__time span {
+  color: var(--soft-blue);
+}
+
+.card__divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin-bottom: 1rem;
+}
+
+.card__creator {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card__avatar {
+  width: 35px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.card__creator p {
+  color: var(--soft-blue);
+  font-size: 0.95rem;
+}
+
+.card__creator span {
+  color: var(--white);
+}
